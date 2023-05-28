@@ -1,0 +1,31 @@
+﻿<Page x:Class="SchoolService.Views.Pages.ActionPages.ServiseClientAdd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SchoolService.Views.Pages.ActionPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ServiseClientAdd">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button Name="btnBack" Click="btnBack_Click" Content="Назад" Width="150" Margin="10"></Button>
+        </StackPanel>
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Клиент:"></TextBlock>
+            <ComboBox Width="300" ItemsSource="{Binding Clients}" SelectedItem="{Binding ClientService.ClientID}" DisplayMemberPath="FirstName" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Услуга:"></TextBlock>
+            <ComboBox Width="300" ItemsSource="{Binding Services}" SelectedItem="{Binding ClientService.ServiceID}" DisplayMemberPath="Title" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Время:"></TextBlock>
+            <TextBox Text="{Binding StartTime}"></TextBox>
+
+            <TextBlock Text="Комментарий:"></TextBlock>
+            <TextBox Text="{Binding Comment}" Margin="0,10,0,0"></TextBox>
+
+            <Button Content="Записать"  Margin="0,20,0,0" Name="SaveBtn" Click="SaveBtn_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Page>
